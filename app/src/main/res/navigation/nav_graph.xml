@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  app:startDestination="@id/mainFragment">
+
+  <fragment
+    android:id="@+id/routerFragment"
+    android:name="mockgps.RouterFragment"
+    android:label="RouterFragment" >
+    <action
+      android:id="@+id/action_routerFragment_to_signupLoginFragment"
+      app:destination="@id/signupLoginFragment"
+      app:popUpTo="@id/routerFragment"
+      app:popUpToInclusive="true" />
+    <action
+      android:id="@+id/action_routerFragment_to_mainFragment"
+      app:destination="@id/mainFragment" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/mainFragment"
+    android:name="mockgps.main.MainFragment"
+    android:label="main_fragment"
+    tools:layout="@layout/main_fragment" />
+  <fragment
+    android:id="@+id/signupLoginFragment"
+    android:name="mockgps.login.SignupLoginFragment"
+    android:label="signup_login_fragment"
+    tools:layout="@layout/signup_login_fragment" >
+    <action
+      android:id="@+id/action_signupLoginFragment_to_mainFragment"
+      app:destination="@id/mainFragment" />
+  </fragment>
+
+</navigation>

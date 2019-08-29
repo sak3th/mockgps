@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/mockContainer"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginLeft="8dp"
+  android:layout_marginRight="8dp"
+  android:layout_marginBottom="8dp"
+  android:background="@drawable/card_background"
+  android:elevation="0dp"
+  android:paddingLeft="10dp"
+  android:paddingTop="10dp"
+  android:paddingRight="10dp"
+  android:paddingBottom="4dp"
+  >
+
+  <ImageView
+    android:id="@+id/imageViewSave"
+    android:layout_width="36dp"
+    android:layout_height="36dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="2dp"
+    android:scaleType="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/save_checked"
+    />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+    android:id="@+id/textViewLocName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="16dp"
+    android:text="Indiranagar asdfasdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdf"
+    android:textIsSelectable="true"
+    android:singleLine="true"
+    android:ellipsize="end"
+    android:gravity="center_vertical"
+    android:foregroundGravity="center_vertical"
+    app:fontFamily="@font/product_sans"
+    app:layout_constraintEnd_toStartOf="@id/imageViewSave"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <com.facebook.shimmer.ShimmerFrameLayout
+    android:id="@+id/shimmerLatLng"
+    android:layout_width="252dp" android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/textViewLocName"
+    app:layout_constraintStart_toStartOf="@id/textViewLocName"
+    app:layout_constraintLeft_toLeftOf="@id/textViewLocName"
+    app:layout_constraintEnd_toStartOf="@id/imageViewMock"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:shimmer_duration="2000"
+    >
+    <View
+      android:layout_width="wrap_content" android:layout_height="10dp"
+      android:foreground="@drawable/shimmer_foreground"
+      android:layout_marginTop="8dp"
+      />
+  </com.facebook.shimmer.ShimmerFrameLayout>
+
+  <com.google.android.material.textview.MaterialTextView
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+    android:id="@+id/textViewLatLng"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="2dp"
+    android:text="12.234234532, 77.234532234"
+    android:textIsSelectable="true"
+    android:textSize="16sp"
+    android:singleLine="true"
+    android:ellipsize="end"
+    app:fontFamily="@font/product_sans"
+    app:layout_constraintEnd_toEndOf="@id/textViewLocName"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLocName" />
+
+  <View
+    android:id="@+id/divider"
+    android:layout_width="0dp"
+    android:layout_height="1.2dp"
+    android:layout_marginTop="16dp"
+    android:background="#24000000"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLatLng" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+    android:id="@+id/textViewAccTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    android:gravity="center"
+    android:text="Accuracy"
+    android:textColor="@color/textColorPrimary"
+    app:fontFamily="@font/product_sans_bold"
+    app:layout_constraintBaseline_toBaselineOf="@id/textViewStopMock"
+    app:layout_constraintLeft_toLeftOf="@id/textViewLatLng" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewAcc"
+    android:layout_width="40dp"
+    android:layout_height="30dp"
+    android:layout_marginLeft="4dp"
+    android:gravity="center"
+    android:text="0.0"
+    android:textColor="@color/textColorPrimary"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+    app:fontFamily="@font/product_sans_bold"
+    app:layout_constraintBaseline_toBaselineOf="@id/textViewAccTitle"
+    app:layout_constraintLeft_toRightOf="@id/textViewAccTitle" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/textViewStartMock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+    app:cornerRadius="18dp"
+    app:backgroundTint="@color/colorStartMock"
+    android:gravity="center"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:text="Start Mock"
+    android:letterSpacing=".04"
+    android:textColor="@color/textColorPrimary"
+    app:fontFamily="@font/product_sans_bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/textViewStopMock"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+    app:cornerRadius="18dp"
+    app:backgroundTint="@color/colorStopMock"
+    android:gravity="center"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:text="Stop"
+    android:letterSpacing=".04"
+    android:textColor="@color/textColorPrimary"
+    app:fontFamily="@font/product_sans_bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+  <androidx.constraintlayout.widget.Group
+    android:id="@+id/mockActionsGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:constraint_referenced_ids="textViewAccTitle,textViewAcc,textViewStopMock"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

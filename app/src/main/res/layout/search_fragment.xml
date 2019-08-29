@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/searchDrawer"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="mockgps.search.SearchFragment">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorActionsBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineLeft"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineRight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_end="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineTop"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineBottom"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_begin="8dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/searchLayout"
+      android:layout_width="0dp"
+      android:layout_height="46dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/card_background"
+      android:elevation="2dp"
+      app:layout_constrainedHeight="true"
+      app:layout_constraintBottom_toTopOf="@id/layoutSearchResults"
+      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+      app:layout_constraintVertical_bias="0.0"
+      app:layout_constraintVertical_chainStyle="packed">
+
+      <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:tint="@color/colorOnSurface"
+        android:layout_marginLeft="10dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_navigate_back_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <EditText
+        android:id="@+id/textSearch"
+        style="@style/Widget.MaterialComponents.TextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:cursorVisible="true"
+        android:focusedByDefault="true"
+        android:hint="  Search place or enter lat, lng"
+        android:imeOptions="actionDone"
+        android:letterSpacing=".02"
+        android:paddingLeft="4dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/textColorHint"
+        android:textSize="20sp"
+        android:transitionName="search"
+        app:fontFamily="@font/product_sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineCancelProgressLeft"
+        app:layout_constraintStart_toEndOf="@id/imageViewBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCancelProgressLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="44dp" />
+
+      <ImageView
+        android:id="@+id/imageViewCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="4dp"
+        android:tint="@color/colorOnSurface"
+        android:src="@drawable/ic_close_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <ProgressBar
+        android:id="@+id/progressBarSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:indeterminate="true"
+        android:tint="@color/colorOnSurface"
+        android:indeterminateTint="@color/colorOnSurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+      android:id="@+id/layoutSearchResults"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/card_background"
+      android:elevation="0dp"
+      android:orientation="vertical"
+      app:layout_constrainedHeight="true"
+      app:layout_constraintBottom_toTopOf="@id/layoutSavedPlaces"
+      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@id/searchLayout">
+
+      <TextView
+        android:id="@+id/textViewSearchResultsHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:letterSpacing=".05"
+        android:singleLine="true"
+        android:text="PREVIOUS SEARCHES"
+        android:textColor="#525252"
+        android:textSize="12sp"
+        app:fontFamily="@font/product_sans_bold" />
+
+      <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        app:shimmer_duration="2000">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+          <include layout="@layout/item_search_shimmer" />
+
+          <include layout="@layout/item_search_shimmer" />
+
+          <include layout="@layout/item_search_shimmer" />
+        </LinearLayout>
+      </com.facebook.shimmer.ShimmerFrameLayout>
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_search_result" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/layoutSavedPlaces"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="10dp"
+      android:background="@drawable/card_background"
+      android:elevation="0dp"
+      android:orientation="vertical"
+      app:layout_constrainedHeight="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@id/layoutSearchResults">
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:letterSpacing=".05"
+        android:singleLine="true"
+        android:text="SAVED PLACES"
+        android:textColor="#525252"
+        android:textSize="12sp"
+        app:fontFamily="@font/product_sans_bold" />
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSavedLocations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_saved_location" />
+    </LinearLayout>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

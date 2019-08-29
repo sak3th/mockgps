@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingLeft="16dp"
+  android:paddingTop="14dp"
+  android:paddingRight="20dp"
+  android:paddingBottom="10dp"
+  android:animateLayoutChanges="true"
+  >
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewSaveTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Save location"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+    app:fontFamily="@font/product_sans_bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <View
+    android:id="@+id/divider"
+    android:layout_width="0dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="12dp"
+    android:background="#CECECE"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewSaveTitle" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewLocName"
+    android:layout_width="0dp"
+    android:layout_height="29dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="20dp"
+    android:letterSpacing=".02"
+    android:text="Indiranagar"
+    android:textIsSelectable="true"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+    app:fontFamily="@font/product_sans"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/divider" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewLatLng"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:text="12.234234532, 77.234532234"
+    android:textIsSelectable="true"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+    app:fontFamily="@font/product_sans"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLocName" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/textInputLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="12dp"
+    app:hintTextColor="@color/textColorHint"
+    app:boxStrokeColor="@color/colorPrimaryVariant"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textViewLatLng">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/editTextAlias"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="-1dp"
+      android:cursorVisible="true"
+      android:focusedByDefault="true"
+      android:hint="Enter an alias"
+      android:imeOptions="actionDone"
+      android:letterSpacing=".02"
+      android:singleLine="true"
+      android:textColor="@color/textColorPrimary"
+      android:textColorHint="@color/textColorHint"
+      app:fontFamily="@font/product_sans" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewSave"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:letterSpacing=".01"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:text="Skip &amp; Save"
+    app:fontFamily="@font/product_sans_bold"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/textViewCancel"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="36dp"
+    android:fitsSystemWindows="true"
+    android:letterSpacing=".01"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:text="Cancel"
+    app:fontFamily="@font/product_sans_bold"
+    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/textViewSave"
+    app:layout_constraintTop_toBottomOf="@id/textInputLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

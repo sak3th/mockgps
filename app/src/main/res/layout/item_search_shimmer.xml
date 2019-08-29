@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="60dp"
+  android:clickable="true"
+  android:id="@+id/layoutSearchResult">
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineLeft"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintGuide_begin="10dp"
+      android:orientation="vertical"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineMiddle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintGuide_begin="30dp"
+      android:orientation="horizontal"/>
+
+  <ImageView
+      android:layout_width="36dp" android:layout_height="36dp"
+      app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+      android:src="@drawable/ic_shimmer_gray_36dp"
+      android:scaleType="centerInside"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:id="@+id/imageView"/>
+
+  <View
+      android:id="@+id/textViewLocName"
+      android:foreground="@drawable/shimmer_foreground"
+      android:layout_width="152dp"
+      android:layout_height="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:layout_marginBottom="2dp"
+      app:layout_constraintStart_toEndOf="@id/imageView"
+      app:layout_constraintBottom_toTopOf="@+id/guidelineMiddle"
+      app:layout_constraintHorizontal_bias="0.0"/>
+
+  <View
+      android:id="@+id/viewPlaceLatLng"
+      android:foreground="@drawable/shimmer_foreground"
+      android:layout_width="256dp"
+      android:layout_height="10dp"
+      android:layout_marginLeft="12dp"
+      android:layout_marginRight="12dp"
+      android:layout_marginTop="2dp"
+      app:fontFamily="@font/product_sans"
+      app:layout_constraintStart_toEndOf="@id/imageView"
+      app:layout_constraintTop_toBottomOf="@+id/guidelineMiddle"
+      app:layout_constraintHorizontal_bias="0.0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

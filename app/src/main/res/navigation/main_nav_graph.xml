@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/actionsFragment">
+
+  <fragment
+    android:id="@+id/actionsFragment"
+    android:name="com.saketh.mockgps.actions.ActionsFragment"
+    android:label="fragment_actions"
+    tools:layout="@layout/fragment_actions">
+    <action
+      android:id="@+id/action_actionsFragment_to_searchFragment"
+      app:destination="@id/searchFragment"
+      app:enterAnim="@anim/slide_in_down"
+      app:exitAnim="@anim/slide_out_down"
+      app:popEnterAnim="@anim/slide_in_down"
+      app:popExitAnim="@anim/slide_out_down"
+      app:popUpTo="@id/actionsFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/searchFragment"
+    android:name="mockgps.search.SearchFragment"
+    android:label="fragment_search"
+    tools:layout="@layout/search_fragment" />
+</navigation>

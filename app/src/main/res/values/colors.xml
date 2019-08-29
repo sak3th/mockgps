@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#ffffff</color>
+  <color name="colorPrimaryVariant">#fafafa</color>
+  <color name="colorOnPrimary">#4d4d4d</color>
+  <color name="colorSecondary">#000000</color>
+  <color name="colorSecondaryVariant">#2f2f2f</color>
+  <color name="colorOnSecondary">#fafafa</color>
+
+  <color name="textColorPrimary">#1d1d1d</color>
+  <color name="textColorSecondary">#fafafa</color>
+  <color name="textColorHint">#bebebe</color>
+
+  <color name="colorActionsBackground">#44000000</color>
+
+  <color name="colorBackground">#ffffff</color>
+  <color name="colorOnBackground">#000000</color>
+  <color name="colorSurface">#ffffff</color>
+  <color name="colorOnSurface">#6C6C6C</color>
+  <color name="colorError">#FF5252</color>
+  <color name="colorOnError">#ffffff</color>
+
+  <color name="colorStartMock">#00cf5c</color>
+  <color name="colorStopMock">#FF5252</color>
+
+  <color name="colorAnalogousOne">#cdd800</color>
+  <color name="colorAnalogousTwo">#00d80b</color>
+  <color name="colorTriadicOne">#00cf5c</color>
+  <color name="colorTriadicOneB">#00d877</color>
+  <color name="colorTriadicTwo">#0061d8</color>
+  <color name="colorTriadicTwoB">#0094ff</color>
+  <color name="colorAccent">#000000</color>
+  <color name="colorAlert">#ef9a9a</color>
+  <color name="colorAlertBackground">#fce4ec</color>
+  <color name="colorAlertBackgroundB">#ffebee</color>
+  <color name="transparent">#00D81B60</color>
+
+  <color name="immersive_bars">#00000000</color>
+  <color name="dark_nav_bar">#000000</color>
+
+</resources>
